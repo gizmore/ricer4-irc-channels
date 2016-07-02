@@ -1,0 +1,36 @@
+en:
+  ricer4:
+    
+    param:
+      channel_name:
+        description: "a channel name"
+        err_channel_name_invalid: "is not a valid channel name"
+    
+    plugins:
+
+      auth:
+        channelmod:
+          description: 'Show or set channel permissions for a user.'
+          msg_show_chan: '%{user} has %{bitstring} in %{channel}. Detected channelmodes: %{chanmode}.'
+
+        
+      irc_channel:
+
+        join:
+          trigger: 'join'
+          description: 'Make $BOT$ join a channel.'
+          err_already_joined: 'I am already in this channel.'
+          msg_trying_to_join: 'Trying to join this channel.'
+          config:
+            autojoin: 'Join channel on startup?'
+
+        kick:
+          trigger: 'kick'
+          description: 'Kick a user and manage kick events.'
+          config:
+            kickjoin: 'Rejoin a channel after being kicked?'
+
+        part:
+          trigger: 'part'
+          description: 'Make $BOT$ leave a channel.'
+          msg_autojoin_off: "I have disabled autojoin for %{channel}."
